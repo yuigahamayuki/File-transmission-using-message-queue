@@ -1,0 +1,11 @@
+CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+
+PROJECT(ipc)
+SET(SRC_PATH . )
+INCLUDE_DIRECTORIES(.)
+
+ADD_EXECUTABLE(mq_client ${SRC_PATH}/mq_client.c ${SRC_PATH}/utilIPC.c)
+TARGET_LINK_LIBRARIES(mq_client rt)
+
+ADD_EXECUTABLE(mq_server ${SRC_PATH}/mq_server.c ${SRC_PATH}/utilIPC.c)
+TARGET_LINK_LIBRARIES(mq_server rt)
