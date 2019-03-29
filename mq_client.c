@@ -21,11 +21,11 @@ int main(int argc, char **argv)
 
 	char name[20];
 	sprintf(name, "/FileTrans_%d", request.pid);
-	/*struct mq_attr attr;
+	struct mq_attr attr;
 	attr.mq_msgsize = (long)sizeof(struct Response);
-	attr.mq_maxmsg = 1;*/
+	attr.mq_maxmsg = 10;
 
-	mqd_t mqd1 = Mq_open(name, O_RDONLY | O_CREAT, S_IRWXU, NULL);//create, read only
+	mqd_t mqd1 = Mq_open(name, O_RDONLY | O_CREAT, S_IRWXU, &attr);//create, read only
 
 	pipe(pipefd);	
 	

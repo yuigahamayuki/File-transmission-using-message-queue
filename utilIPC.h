@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#define MAXFILESIZE 8192
+#define MAXFILESIZE 12 * 1024
 struct Request {
 	short pid;
 	char requestFileName[18];
